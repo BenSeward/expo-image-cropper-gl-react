@@ -65,7 +65,7 @@ class ImageCrop extends Component {
     return pictureSave;
   }
 
-  componentDidMount() {
+  componentWillMount() {
     Image.getSize(this.props.image, (width, height) => {
       //update state
       this.setState({
@@ -154,7 +154,7 @@ class ImageCrop extends Component {
             //what is the zoom level
             var screenDiagonal = Math.sqrt(
               this.state.imageHeight * this.state.imageHeight +
-                this.state.imageWidth * this.state.imageWidth,
+              this.state.imageWidth * this.state.imageWidth,
             );
             var distance = (this.zoomCurrentDistance - this.zoomLastDistance) / 400;
             var zoom = this.state.zoom - distance;

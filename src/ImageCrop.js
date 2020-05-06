@@ -65,7 +65,7 @@ class ImageCrop extends Component {
     return pictureSave;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     Image.getSize(this.props.image, (width, height) => {
       //update state
       this.setState({
